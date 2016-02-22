@@ -20,9 +20,9 @@ $ sudo apt-get install gedit
 - Clone to the my repository from terminal
 ``` 
 $ git clone https://github.com/mohanad86/Web-Application-
-$ git pull You 
+$ git pull 
 - You will pull the Java-coding in your PC
-$ ls  
+$ ls
 -To showing you the list location of the file Web-Application-
 $ cd Web-Application-
 - Then you are in :)
