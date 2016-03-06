@@ -1,0 +1,64 @@
+
+p, ul, li, h1, h2, h, a {
+    /* Roboto font works only if the font CSS is included from Google */
+    font-family: "Roboto", Verdana, Arial, sans-serif;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+
+}
+
+body {
+    padding: 0 1em;
+    background-color: #aabbff;
+}
+
+#content, footer { /* This expects id="content" ;) */
+    margin: 0 auto;
+    padding: 0 1em;
+    max-width: 40em;
+    border: 1px solid #888;
+    background-color: white;
+}
+
+footer {
+    color: #fff;
+    background-color: #222;
+}
+
+img { /* This will look ugly tho! */
+    width: 800px;
+    height: 100px;
+}
+
+
+
+
+#header {
+    background-color:red;
+    color:white;
+    text-align:center;
+    padding:5px;
+}
+#nav {
+    line-height:30px;
+    background-color:#eeeeee;
+    height:300px;
+    width:100px;
+    float:left;
+    padding:5px;	      
+}
+#section {
+    width:350px;
+    float:left;
+    padding:10px;	 	 
+}
+#footer {
+    background-color:black;
+    color:white;
+    clear:both;
+    text-align:center;
+   padding:5px;	 	 
+}
