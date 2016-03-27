@@ -3,7 +3,7 @@ require_once "config.php";
 include "header.php";
 ?>
 
-<h1>Register user account</h1>
+<h2>Register user account</h2>
 
 <form method="post" action="regsubmit.php">
   <div>
@@ -45,5 +45,6 @@ include "header.php";
     <input type="submit"/>
   </div>
 </form>
-
+<a href="index.php">Back to the main page</a>
+<?
 <?php include "footer.php" ?>

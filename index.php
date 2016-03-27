@@ -5,47 +5,32 @@ $conn = new mysqli(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
 if ($conn->connect_error)
   die("Connection to database failed:" .
     $conn->connect_error);
-$conn->query("set names utf8"); // Support umlaut characters
+$conn->query("set names utf8"); 
 if (!array_key_exists("timestamp", $_SESSION)) {
   $_SESSION["timestamp"] = date('l jS \of F Y h:i:s A');
 }
+if (array_key_exists("user", $_SESSION)) {
+   echo "Hello" . $_SESSION["user"];
+   ?> <a href="logout.php"> Log out</a><?php
+} else { ?>
+  <form action="login.php" method="post">
+    <input type="text" name="user"/>
+    <input type="password" name="password"/>
+    <input type="submit" value="Log in"/>
+  </form> <?php
+} 
 ?>
 
 
 
-<!DOCTYPE html>
-<html>
-<body>
-<?php// phpinfo();?>
-<ul>
-<a href="action_page.php" />
-<img src="login-button.jpg" alt="Mohanad.php" width="140" height="142">
-</ul>
 
 
-<h3>Get more about my shopy shop visit us</h3>
-<div class="scd-content-social">
-<li class="fb"><a href="https://www.facebook.com/Shopy-shop-1742584925970334/"target="_blank"><span></span><strong>Facebook <em>›</em><strong></a></li>
-</ul>
-<li>
- <a href="https://www.facebook.com/Shopy-shop-1742584925970334/" target="_blank">Facebook</a>
-        </li>
-<div class="Container">
-<h1></h1>
-</div>
-</div>
+<a href="registration.php">Sign up</a> 
+<div class="Container"></div>
+<div class="learn more"></div>
+<div class="Container"></div>
+<a href="cart.php">Go to shopping cart</a>
 
-<p>
-<a href="#">Top</a>
-</p>
-</div>
-
-<div class="Container">
-
-<div class="learn more">
-<div class="Container">
-<div>
-</div>
 <?php
 // Create connection
 //Check connection
@@ -53,15 +38,11 @@ $results = $conn->query(
  "SELECT id, name, price FROM mohanad_products;");
     while($row = $results->fetch_assoc()) {
  	?>
-        <li>
           <a href="description.php?id=<?=$row['id']?>">
             <?=$row["name"]?></a>
             <?=$row["price"]?>EUR
-        </li>
       <?php
 }
 $conn->close();
-?> 
- </ul>
-    </p>
-<? include "footer.php" ?>
+include "footer.php";
+?>

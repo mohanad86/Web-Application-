@@ -1,11 +1,11 @@
 <?php
+//var_dump($_POST);
 require_once "config.php";
-include "header.php"; // This includes <html><head></head><body>
+include "header.php"; 
 $conn = new mysqli(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
 $conn or die("Database connection failed:" . $conn->error);
-$conn->query("set names utf8"); // Support umlaut characters
+$conn->query("set names utf8"); 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
-    // We are updating the cart contents
     $product_id = intval($_POST["id"]);
     if (array_key_exists($product_id, $_SESSION["cart"])) {
         $_SESSION["cart"][$product_id] += intval($_POST["count"]);
@@ -20,13 +20,13 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
 <h2>Products in shopping cart</h2>
 
-<a href="index.php">Back to product listing</a>
+
 <p>
 
 <ul>
 <?php
 $results = $conn->query(
-"SELECT id,name,price FROM lauri_products;");
+"SELECT id,name,price FROM mohanad_products;");
 $results or die("Database query failed:" . $conn->error);
 while ($row = $results->fetch_assoc()) {
   $product_id = $row['id'];
@@ -49,6 +49,6 @@ while ($row = $results->fetch_assoc()) {
 }
 $conn->close();
 ?>
+<button onclick="window.location.href='placeorder.php'">BUY IT NOW FOR 999</button> 
 </ul>
-
-<?php include "footer.php" ?>
+<a href="index.php">Back to product listing</a>
