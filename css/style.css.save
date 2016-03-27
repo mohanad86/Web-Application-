@@ -1,6 +1,6 @@
 
 p, ul, li, h1, h2, h, a {
-    /* Roboto font works only if the font CSS is included from Google */
+  /* Roboto font works only if the font CSS is included from Google */
     font-family: "Roboto", Verdana, Arial, sans-serif;
 }
 
@@ -41,7 +41,6 @@ img { /* This will look ugly tho! */
     color:white;
     text-align:center;
     padding:5px;
-
 }
 #nav {
     line-height:30px;
@@ -63,5 +62,3 @@ img { /* This will look ugly tho! */
     text-align:center;
    padding:5px;	 	 
 }
-
-
